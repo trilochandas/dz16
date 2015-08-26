@@ -62,8 +62,6 @@ class Ads{
         global $db;
         $vars = get_object_vars($this);
         $db->query('REPLACE INTO adverts(?#) VALUES(?a)',  array_keys($vars),  array_values($vars));
-        // header("Location: {$_SERVER['PHP_SELF']}");
-        echo 'its done. HARIBOL!';
     }
 
     public static function deleteAdvert($id) {

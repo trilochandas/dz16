@@ -1,7 +1,7 @@
-<?php /* Smarty version 2.6.28, created on 2015-08-25 15:06:42
+<?php /* Smarty version 2.6.28, created on 2015-08-26 12:00:16
          compiled from oop.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('modifier', 'default', 'oop.tpl', 28, false),array('function', 'html_options', 'oop.tpl', 52, false),)), $this); ?>
+smarty_core_load_plugins(array('plugins' => array(array('modifier', 'default', 'oop.tpl', 32, false),array('function', 'html_options', 'oop.tpl', 56, false),)), $this); ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -23,7 +23,12 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'default', '
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
   </head>
-  <body>     
+  <body>   
+    <div class="menu">
+      <a class="btn btn-default" href="<?php echo $_SERVER['SCRIPT_NAME']; ?>
+">HOME</a>  
+      
+    </div>
     <form id="advertForm" class="form-horizontal" method="POST" role="form">
     <h2 class="sub-header">Add advert</h2>
   <div class="form-group">

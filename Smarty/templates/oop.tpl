@@ -19,7 +19,11 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
   </head>
-  <body>     
+  <body>   
+    <div class="menu">
+      <a class="btn btn-default" href="{$smarty.server.SCRIPT_NAME}">HOME</a>  
+      
+    </div>
     <form id="advertForm" class="form-horizontal" method="POST" role="form">
     <h2 class="sub-header">Add advert</h2>
   <div class="form-group">
