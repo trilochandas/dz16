@@ -1,0 +1,24 @@
+body{
+	padding: 2em 2.5em;
+}
+.right-side{
+	width: 49%;
+  margin-left: 49%;
+	
+}
+
+#info{
+	display: none;
+}
+.adverts-table{
+	overflow-y: scroll;
+	height: 625px;
+}
+.adverts-table .btn{
+	margin-bottom: 10px;
+}
+form{
+	width: 45%;
+	position: absolute;
+	top: 2em;
+}
