@@ -30,5 +30,4 @@ if ( isset($_GET['id']) ) { // просмотр объявления
     $id = (int) $_GET['id'];
     $instance->advertForForm($id); 
 }
-
 $instance->display(); 

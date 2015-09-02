@@ -74,14 +74,24 @@ class Ads{
             $result['message'] = 'ERROR! The advert with ID number ' . $id . ' WAS NOT successfully deleted.';
         }
 
-        $allAdverts = $db->query('SELECT * FROM adverts');
-
-        if (count( $allAdverts ) == 0) {
+        $allAdverts = $db->selectCell('SELECT COUNT(id) FROM adverts');
+        if (  $allAdverts == 0) {
             $result['emptyDb'] = 'Database is empty.';
         }
 
         echo json_encode($result);
     }
+
+    // public static function test() {
+    //     global $db;
+    //     $allAdverts = $db->selectCell('SELECT COUNT(id) FROM adverts');
+    //     var_dump($allAdverts);
+
+    //     if (  $allAdverts == 0) {
+    //         $result['emptyDb'] = 'Database is empty.';
+    //     }
+
+    // }
 
     public function getObjectParam() {
         return get_object_vars($this);

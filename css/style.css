@@ -10,13 +10,15 @@ h2{
   border-radius: 4px;
 }
 .right-side{
-  width: 49%;
-  margin-left: 49%;
+  width: 50%;
   margin-top: 1em;
-  float: left;
+  float: right;
+  position: relative;
 }
 #info{
 	display: none;
+	position: absolute;
+	width: 100%;
 }
 .adverts-table{
 	overflow-y: scroll;

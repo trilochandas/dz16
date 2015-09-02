@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2015-08-11 18:37:48
+<?php /* Smarty version 2.6.28, created on 2015-09-02 11:09:24
          compiled from table.tpl.html */ ?>
                     <div class="table-wrapper">
                      <h2 class="sub-header">All adverts</h2>

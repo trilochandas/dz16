@@ -11,19 +11,16 @@ if (isset($_GET['del'])) {
 
 // if form was submitted
 if (isset($_GET['formSubmit'])) {
-    // update advert
-    if (isset($_GET['id'])) {
-        $post = $_POST;
-        $post['id'] = (int) $_GET['id'];
-        $ad=new Ads($post);
-        $ad->save();
-    // add advert
-    } else {
-        $ad=new Ads($_POST);
-        $ad->save();
-    }
+    $ad=new Ads($_POST);
+    $ad->save();
 }
 
+if (isset($_GET['tableUpdate'])) {
+    global $db;
+
+    $lastRow = $db->query('SELECT * FROM adverts ORDER BY MAX(id)');
+    print_r( $lastRow );
+}
 // // insert advert to form
 // if ( isset($_GET['id']) ) { // просмотр объявления
 // 		$instance = AdsStore::instance()->getAllAdsFromDb();

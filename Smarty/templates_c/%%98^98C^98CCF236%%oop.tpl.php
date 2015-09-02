@@ -1,7 +1,7 @@
-<?php /* Smarty version 2.6.28, created on 2015-08-26 12:00:16
+<?php /* Smarty version 2.6.28, created on 2015-09-02 13:10:34
          compiled from oop.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('modifier', 'default', 'oop.tpl', 32, false),array('function', 'html_options', 'oop.tpl', 56, false),)), $this); ?>
+smarty_core_load_plugins(array('plugins' => array(array('modifier', 'default', 'oop.tpl', 29, false),array('function', 'html_options', 'oop.tpl', 57, false),)), $this); ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -31,6 +31,8 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'default', '
     </div>
     <form id="advertForm" class="form-horizontal" method="POST" role="form">
     <h2 class="sub-header">Add advert</h2>
+    <input type="text" name="id" value="<?php echo ((is_array($_tmp=@$this->_tpl_vars['id'])) ? $this->_run_mod_handler('default', true, $_tmp, '') : smarty_modifier_default($_tmp, '')); ?>
+" hidden>
   <div class="form-group">
     <label for="inputTitle" class="col-sm-2 control-label">Title</label>
     <div class="col-sm-10">
@@ -62,7 +64,7 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'default', '
   <div class="form-group">
     <label for="inputCity" class="col-sm-2 control-label">City</label>
     <div class="col-sm-10">
-     <?php echo smarty_function_html_options(array('class' => "form-control",'name' => 'city','options' => $this->_tpl_vars['citys'],'selected' => ((is_array($_tmp=@$this->_tpl_vars['city'])) ? $this->_run_mod_handler('default', true, $_tmp, '') : smarty_modifier_default($_tmp, ''))), $this);?>
+     <?php echo smarty_function_html_options(array('class' => "form-control",'id' => 'city','name' => 'city','options' => $this->_tpl_vars['citys'],'selected' => ((is_array($_tmp=@$this->_tpl_vars['city'])) ? $this->_run_mod_handler('default', true, $_tmp, '') : smarty_modifier_default($_tmp, ''))), $this);?>
 
     </div>
   </div>
@@ -122,10 +124,10 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'default', '
 </form>
 <div  class="right-side">
   <div id="info" class="alert alert-warning" role="alert">
-  <button type="button" class="close" onclick="$('.alert').fadeOut('slow')"><span aria-hidden="true">&times;</span></button>
-  <div id="infoText"></div>
-  <p id="emptyDb"></p>
-</div>  
+    <button type="button" class="close" onclick="$('.alert').fadeOut('slow')"><span aria-hidden="true">&times;</span></button>
+    <div id="infoText"></div>
+    <p id="emptyDb"></p>
+  </div>  
   <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => 'table.tpl.html', 'smarty_include_vars' => array()));
 $this->_tpl_vars = $_smarty_tpl_vars;

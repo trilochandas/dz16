@@ -26,6 +26,7 @@
     </div>
     <form id="advertForm" class="form-horizontal" method="POST" role="form">
     <h2 class="sub-header">Add advert</h2>
+    <input type="text" name="id" value="{$id|default:''}" hidden>
   <div class="form-group">
     <label for="inputTitle" class="col-sm-2 control-label">Title</label>
     <div class="col-sm-10">
@@ -53,7 +54,7 @@
   <div class="form-group">
     <label for="inputCity" class="col-sm-2 control-label">City</label>
     <div class="col-sm-10">
-     {html_options class="form-control" name=city options=$citys selected=$city|default:'' }
+     {html_options class="form-control" id="city" name=city options=$citys selected=$city|default:'' }
     </div>
   </div>
   <div class="form-group">
@@ -105,10 +106,10 @@
 </form>
 <div  class="right-side">
   <div id="info" class="alert alert-warning" role="alert">
-  <button type="button" class="close" onclick="$('.alert').fadeOut('slow')"><span aria-hidden="true">&times;</span></button>
-  <div id="infoText"></div>
-  <p id="emptyDb"></p>
-</div>  
+    <button type="button" class="close" onclick="$('.alert').fadeOut('slow')"><span aria-hidden="true">&times;</span></button>
+    <div id="infoText"></div>
+    <p id="emptyDb"></p>
+  </div>  
   {include file='table.tpl.html'}
 </div>
 
