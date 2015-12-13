@@ -19,6 +19,10 @@ if (isset($_GET['formSubmit'])) {
     // сохраняем объявление
     $ad->save();
 
+    $newInstance = AdsStore::instance();
+    $newInstance->getAllAdsFromDb()->displayForm();
+    echo ($row);
+    
     // $all = $db->select('select * from adverts');
     // $row='';
     // foreach ($all as $value) {
@@ -27,9 +31,6 @@ if (isset($_GET['formSubmit'])) {
     // }
     // $smarty->assign('ads_rows',$row);
 
-    $newInstance = AdsStore::instance();
-    $newInstance->getAllAdsFromDb()->displayForm();
-    echo ($row);
 
     // $id = $ad->getId();
 
