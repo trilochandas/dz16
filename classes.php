@@ -133,7 +133,9 @@ class AdsStore{
     public function getAllAdsFromDb() {
         global $db;
         $all = $db->select('select * from adverts');
+        // var_dump($all);
         foreach ($all as $value){
+            // var_dump($value);
             if ($value['type'] == 'private') {
                 $ad = new PrivateAdverts($value);
             } elseif ($value['type'] == 'company') {
@@ -145,6 +147,7 @@ class AdsStore{
     }
     public function prepareForOut() {
         global $smarty;
+        // var_dump($this->ads);
         $row='';
         foreach ($this->ads as $value) {
             $smarty->assign('ad',$value);
@@ -152,6 +155,18 @@ class AdsStore{
         }
         $smarty->assign('ads_rows',$row);
         return self::$instance;
+    }
+    public function displayForm() {
+        global $smarty;
+        // var_dump($this->ads);
+        $row='';
+        foreach ($this->ads as $value) {
+            $smarty->assign('ad',$value);
+            $row.=$smarty->fetch('table_row.tpl.html');
+        }
+        $smarty->assign('ads_rows',$row);
+        return $row;
+        // return self::$instance;
     }
     public function display() {
         global $smarty;
