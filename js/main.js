@@ -33,13 +33,11 @@ $( document ).ready(function() {
                 $('#advertForm textarea').html('');
                 $('#advertForm input#send').attr('value', 'Send');
                 // update adverts table
-                $('.adverts-table table tbody').html(data);
                 console.log(data);
-
-                // $('.adverts-table').load('ajax-request.php?tableUpdate=1', function(resp){
-                //   $('.adverts-table').html(resp);
-                // });
-
+                var dataId = data['id'];
+                console.log(dataId);
+                $('.adverts-table table tbody').find('td[data-id="'+dataId+'"]').parent().html(data['row']);
+                console.log('td[data-id="'+dataId+'"');
              }
       });
 

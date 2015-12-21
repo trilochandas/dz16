@@ -156,6 +156,16 @@ class AdsStore{
         $smarty->assign('ads_rows',$row);
         return self::$instance;
     }
+    public function getUpdatedAdvert($id) {
+        global $smarty;
+        global $ads;
+        // var_dump($this->ads);
+        $row='';
+        $adNeeded = $this->ads[$id];
+        $smarty->assign('ad',$adNeeded);
+        $row.=$smarty->fetch('table_row.tpl.html');
+        return $row;
+    }
     public function displayForm() {
         global $smarty;
         // var_dump($this->ads);

@@ -14,14 +14,20 @@ if (isset($_GET['del'])) {
 if (isset($_GET['formSubmit'])) {
     global $db;
     global $smarty;
+    // global $row; 
+    $response = [];
+    $id;
 
     $ad=new Ads($_POST);
     // сохраняем объявление
     $ad->save();
-
+    $id = $ad->getId();
+    // var_dump($a);
     $newInstance = AdsStore::instance();
-    $newInstance->getAllAdsFromDb()->displayForm();
-    echo ($row);
+    $response['id'] = $id;
+    $response['row'] = $newInstance->getAllAdsFromDb()->getUpdatedAdvert($id);
+    print_r( $response );
+    // echo ($row);
     
     // $all = $db->select('select * from adverts');
     // $row='';

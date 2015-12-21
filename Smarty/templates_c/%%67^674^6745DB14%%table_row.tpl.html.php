@@ -1,7 +1,8 @@
-<?php /* Smarty version 2.6.28, created on 2015-12-13 14:27:28
+<?php /* Smarty version 2.6.28, created on 2015-12-19 20:07:45
          compiled from table_row.tpl.html */ ?>
 <tr>
-	<td><?php echo $this->_tpl_vars['ad']->getId(); ?>
+	<td data-id="<?php echo $this->_tpl_vars['ad']->getId(); ?>
+" class="advert_id"><?php echo $this->_tpl_vars['ad']->getId(); ?>
 </td>
 	<td><?php echo $this->_tpl_vars['ad']->getTitle(); ?>
 </td>
