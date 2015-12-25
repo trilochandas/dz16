@@ -26,7 +26,7 @@ if (isset($_GET['formSubmit'])) {
     $newInstance = AdsStore::instance();
     $response['id'] = $id;
     $response['row'] = $newInstance->getAllAdsFromDb()->getUpdatedAdvert($id);
-    print_r( $response );
+    echo (json_encode( $response ));
     // echo ($row);
     
     // $all = $db->select('select * from adverts');

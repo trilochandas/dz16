@@ -19,6 +19,16 @@ $( document ).ready(function() {
         });
     });
 
+    // $("a.showAdvert").on('click', function(event){
+    //   event.preventDefault();
+    //   var id = $(this).data('id');
+    //   $.ajax({
+    //     type: "GET",
+    //     url: 'ajax-request.php?id="'+id+'"',
+        
+    //   });
+    // });
+
     // add advert
     $("#advertForm").submit(function() {
 
@@ -33,11 +43,19 @@ $( document ).ready(function() {
                 $('#advertForm textarea').html('');
                 $('#advertForm input#send').attr('value', 'Send');
                 // update adverts table
+                var data = JSON.parse(data);
+                console.log(typeof(data));
                 console.log(data);
                 var dataId = data['id'];
+                var dataRow = data['row'];
                 console.log(dataId);
-                $('.adverts-table table tbody').find('td[data-id="'+dataId+'"]').parent().html(data['row']);
-                console.log('td[data-id="'+dataId+'"');
+                console.log(dataRow);
+                console.log('td[data-id="'+dataId+'"]');
+                var table_row = $('.adverts-table table tbody').find('td[data-id="'+dataId+'"]').parent();
+                table_row.hide('slow', function(){
+                  $(dataRow).insertAfter(table_row);
+                  table_row.remove();
+                });
              }
       });
 
